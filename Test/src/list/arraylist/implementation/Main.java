@@ -40,10 +40,10 @@ public class Main {
 		
 		
 		System.out.println("\n-------원하는 인덱스 출력----------");
-		System.out.println(numbers.getElementData(1));
+		System.out.println(numbers.get(1));
 		
 		System.out.println("\n-------배열 사이즈 출력----------");
-		System.out.println(numbers.getSize());
+		System.out.println(numbers.size());
 		
 		
 		System.out.println("\n-------원하는 값의 인덱스 번호출력----------");
@@ -52,13 +52,28 @@ public class Main {
 		System.out.println("\n-------iterator----------");
 		
 		ArrayList.ListIterator li = numbers.listIterator();
-		
 		// 데이터를 쭉 출력
+		
 		while(li.hasNext()) {
 			
 			System.out.println(li.next());
 		}
 		
+		while(li.hasPrevious()) {
+			
+			System.out.println(li.previous());
+		}
+		
+//		----------------------------------------------------------------------------
+		
+		while(li.hasNext()) {
+			int number = (int)li.next();
+			if(number == 30)
+//				li.add(35);
+				li.remove();
+		}
+	
+		System.out.println(numbers);
 		
 	}
 }
